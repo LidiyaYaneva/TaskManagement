@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:insert="~{/fragments/head}"/>
+    <title>Create Employee</title>
+</head>
+<body>
+
+<th:block th:insert="~{/fragments/header}"/>
+
+<div class="container-fluid">
+    <div class="row">
+
+
+        <div class="col-4">
+            <th:block th:insert="~{/fragments/employee-nav}"/>
+        </div>
+
+        <div class="addEmployeeForm col-lg-6">
+            <form th:action="@{/employees/save}" th:object="${createEmployeeDTO}"  th:method="POST">
+
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <input type="hidden" th:field="*{id}">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" class="form-control" id="fullName" placeholder="Enter full name" required
+                               th:field="*{fullName}"
+                               th:errorclass="is-invalid"
+                               th:required="required">
+                        <small th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}" class="text-danger">Full name error message.</small>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" id="email" placeholder="Enter email" required
+                               th:field="*{email}"
+                               th:errorclass="is-invalid"
+                               th:required="required">
+                        <small th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger">Email error message.</small>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="phoneNumber">Phone number</label>
+                        <input type="text" class="form-control" id="phoneNumber" placeholder="Enter phone number" required
+                               th:field="*{phoneNumber}"
+                               th:errorclass="is-invalid"
+                               th:required="required">
+                        <small th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}" class="text-danger">Phone number error message.</small>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="dateOfBirth">Date of Birth</label>
+                        <input type="date" class="form-control" id="dateOfBirth" placeholder="Enter date of birth" required
+                               th:field="*{dateOfBirth}"
+                               th:errorclass="is-invalid"
+                               th:required="required">
+                        <small th:if="${#fields.hasErrors('dateOfBirth')}" th:errors="*{dateOfBirth}" class="text-danger">Date of birth error message.</small>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="monthlySalary">Monthly Salary</label>
+                        <input type="number" class="form-control" id="monthlySalary" placeholder="Enter monthly salary" required
+                               th:field="*{monthlySalary}"
+                               th:errorclass="is-invalid"
+                               th:required="required">
+                        <small th:if="${#fields.hasErrors('monthlySalary')}" th:errors="*{monthlySalary}" class="text-danger">Salary error message.</small>
+                    </div>
+                </div>
+
+
+                <button  class="btn btn-primary" type="submit">Save Employee</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<th:block th:insert="~{/fragments/footer}"/>
+</body>
+</html>

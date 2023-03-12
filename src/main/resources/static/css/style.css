@@ -1,0 +1,16 @@
+.jumbotron {
+    position: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 50px;
+}
+.container-fluid {
+    padding-top: 30px;
+}
+.navHeader{
+    padding-right: 50%;
+
+}
+.table {
+    font-size: 14px;
+}

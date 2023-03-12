@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:insert="~{/fragments/head}"/>
+    <title>Employees</title>
+</head>
+<body>
+
+<th:block th:insert="~{/fragments/header}"/>
+
+<main>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-4">
+                <th:block th:insert="~{/fragments/statistics-nav}"/>
+            </div>
+            <div class="col-7">
+                <h6>Current tasks in progress: <span th:text="${tasksInProgress.size()}"></span></h6>
+                <table class="table table-bordered table-sm mt-2">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Client</th>
+                        <th>Description</th>
+                        <th>Assignee</th>
+                        <th>Due Date</th>
+
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="t : ${tasksInProgress}" th:field="${t}" >
+
+                        <td th:text="${t.id}"></td>
+                        <td th:text="${t.title}"></td>
+                        <td th:text="${t.clientName} ?: 'Internal'"></td>
+                        <td th:text="${t.description}"></td>
+                        <td th:text="${t.assigneeFullName}"></td>
+                        <td th:text="${t.dueDate}"></td>
+
+
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+
+</main>
+
+<th:block th:insert="~{/fragments/footer}"/>
+
+
+</body>
+</html>

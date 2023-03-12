@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:insert="~{/fragments/head}"/>
+    <title>Employees</title>
+</head>
+<body>
+
+<th:block th:insert="~{/fragments/header}"/>
+
+<main>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-2">
+                <th:block th:insert="~{/fragments/employee-nav}"/>
+            </div>
+            <div class="col-8">
+                <div class="container mb-xl-auto">
+                    <h6 >Find an employee by their name</h6>
+                    <form th:action="@{/employees/find}" th:method="GET">
+                        <input type="text" name="inputName" th:value="${inputName}"  placeholder="Find by name" size="50" >
+                        <button type="submit" class="btn btn-info" value="GetForm">Search</button>
+                    </form>
+                    <table class="table table-bordered table-sm mt-2">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Phone Number</th>
+                            <th>Date of birth</th>
+                            <th>Monthly Salary</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="e : ${displayEmployeeInfo}" th:field="${e}" >
+                            <td th:text="${e.id}"></td>
+                            <td th:text="${e.fullName}"></td>
+                            <td th:text="${e.email}"></td>
+                            <td th:text="${e.phoneNumber}"></td>
+                            <td th:text="${e.dateOfBirth}"></td>
+                            <td th:text="${e.monthlySalary}"></td>
+                            <td>
+                                <a th:href="@{/employees/edit/{id}(id=${e.id})}" ><i class="fa fa-edit"></i></a>
+                            </td>
+                            <td>
+                                <a th:href="@{/employees/delete/{id}(id=${e.id})}" ><i class="fa fa-remove"></i></a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+        </div>
+        </div>
+    </div>
+
+
+</main>
+
+<th:block th:insert="~{/fragments/footer}"/>
+
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:insert="~{/fragments/head}"/>
+    <title>Employees</title>
+</head>
+<body>
+
+<th:block th:insert="~{/fragments/header}"/>
+
+<main>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-4">
+                <th:block th:insert="~{/fragments/statistics-nav}"/>
+            </div>
+            <div class="col-4">
+                <h6>Total tasks per client:</h6>
+                <table class="table table-bordered table-sm mt-2">
+                    <thead>
+                    <tr>
+                        <th>Client</th>
+                        <th>Total tasks</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="t : ${tasksPerClient}" th:field="${t}" >
+
+                        <td th:text="${t.clientName}"></td>
+                        <td th:text="${t.taskCount}"></td>
+
+
+
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</main>
+
+<th:block th:insert="~{/fragments/footer}"/>
+
+
+</body>
+</html>

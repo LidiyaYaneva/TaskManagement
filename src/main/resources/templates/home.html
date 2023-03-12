@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:insert="~{/fragments/head}"/>
+    <title>Task Management</title>
+</head>
+<body>
+
+<th:block th:insert="~{/fragments/header}"/>
+
+<main>
+    <div class="jumbotron" style="width: 50%">
+        <h1 class="display-4 lead text-center">Task Management</h1>
+        <p class="lead text-center">Organise easily your project tasks.
+            <br>Assign tasks to your employees and track their productivity.</p>
+        <hr class="my-4">
+        <th:block th:if="${(areEmployeesSeeded == true) && (areTasksSeeded == true)}">
+            <p class="lead text-center">There is example data in your database. You can start testing the application!</p>
+        </th:block>
+        <th:block th:unless="${(areEmployeesSeeded == true) && (areTasksSeeded == true)}" >
+            <p class="text-center">If you would like to fill your Database with example data, please import the employees first, and the tasks second:</p>
+            <p class="lead text-center">
+                <a th:if = "${areEmployeesSeeded == false}" class="btn btn-primary btn-lg" th:href="@{/seed/employees}" role="button">Seed Employees</a>
+                <a th:if = "${areTasksSeeded == false}" class="btn btn-primary btn-lg" th:href="@{/seed/tasks}" role="button">Seed Tasks</a>
+            </p>
+        </th:block>
+    </div>
+
+</main>
+
+<th:block th:insert="~{/fragments/footer}"/>
+
+
+</body>
+</html>

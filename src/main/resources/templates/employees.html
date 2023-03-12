@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:insert="~{/fragments/head}"/>
+    <title>Employees</title>
+</head>
+<body>
+
+<th:block th:insert="~{/fragments/header}"/>
+
+<main>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-2">
+                <th:block th:insert="~{/fragments/employee-nav}"/>
+            </div>
+            <div class="col-8">
+                <table class="table table-bordered table-sm mt-2">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Phone number</th>
+                        <th>Date of birth</th>
+                        <th>Monthly Salary</th>
+                        <th>Tasks Completed</th>
+                        <th>Tasks In Progress</th>
+
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="e : ${displayEmployeeWithStatsDTOS}" >
+                        <td th:text="${e.id}"></td>
+                        <td th:text="${e.fullName}"></td>
+                        <td th:text="${e.email}"></td>
+                        <td th:text="${e.phoneNumber}"></td>
+                        <td th:text="${e.dateOfBirth.toString()}"></td>
+                        <td th:text="${e.monthlySalary}"></td>
+                        <td th:text="${e.tasksCompletedCount} ?: 'No information'"></td>
+                        <td th:text="${e.tasksInProgressCount} ?: 'No information'"></td>
+                    </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+</main>
+
+<th:block th:insert="~{/fragments/footer}"/>
+
+
+</body>
+</html>

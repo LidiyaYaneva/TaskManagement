@@ -1,0 +1,18 @@
+[
+  {"title": "Internship Application", "description": "Create a Task Management Application", "dueDate": "2023-03-13", "status": "ACTIVE", "assignee": "1", "finishDate": "2000-01-01"},
+  {"title": "Monthly Report", "description": "Prepare a presentation to acquaint managers about monthly targets reached", "dueDate": "2023-02-05", "status": "COMPLETED", "assignee": "3", "finishDate": "2023-02-05", "client": 1},
+  {"title": "Fix a client's issue 1", "description": "Find out the reason our client 1 is having trouble with the product and fix it", "dueDate": "2023-02-15", "status": "COMPLETED",  "assignee": "3", "finishDate": "2023-02-15", "client": 1},
+  {"title": "Develop new feature 1", "description": "Develop new feature for the current project according to our client's needs", "dueDate": "2023-04-20", "status": "ACTIVE",  "assignee": "3", "finishDate": "2000-01-01", "client": 1},
+  {"title": "Sales Report", "description": "Write a report for the sales of a product during January", "dueDate": "2023-02-22", "status": "COMPLETED", "assignee": "4", "finishDate": "2023-02-22", "client": 1},
+  {"title": "Research new market", "description": "Research opportunities for expanding the business in Greece", "dueDate": "2023-02-31", "status": "CANCELLED",  "assignee": "4", "finishDate": "2000-01-01"},
+  {"title": "Fix a client's issue 2", "description": "Find out the reason our client 2 is having trouble with the product and fix it", "dueDate": "2023-02-13", "status": "COMPLETED", "assignee": "2", "finishDate": "2023-02-13", "client": 2},
+  {"title": "Develop new feature 2", "description": "Develop new feature for the current project according to our client's needs", "dueDate": "2023-02-20", "status": "COMPLETED","assignee": "2", "finishDate": "2023-02-20", "client": 2},
+  {"title": "Develop new feature 3", "description": "Develop new feature for the current project according to our client's needs", "dueDate": "2023-02-15", "status": "COMPLETED", "assignee": "3", "finishDate": "2023-02-15", "client": 2},
+  {"title": "Clients Meeting ", "description": "Organise a meeting with a future client ", "dueDate": "2023-02-20", "status": "PAUSED", "assignee": "4", "finishDate": "2000-01-01"},
+  {"title": "Fix a client's issue 3", "description": "Find out the reason our client 3 is having trouble with the product and fix it", "dueDate": "2023-02-22","status": "COMPLETED", "assignee": "5", "finishDate": "2023-02-22", "client": 3},
+  {"title": "Develop new feature 4", "description": "Develop new feature for the current project according to our client's needs", "dueDate": "2023-02-23","status": "COMPLETED", "assignee": "5", "finishDate": "2023-02-22", "client": 3},
+  {"title": "Develop new feature 5", "description": "Develop new feature for the current project according to our client's needs", "dueDate": "2023-02-28","status": "COMPLETED", "assignee": "5", "finishDate": "2023-02-27", "client": 3},
+  {"title": "Fix a client's issue 4", "description": "Find out the reason our client 4 is having trouble with the product and fix it", "dueDate": "2023-02-20","status": "COMPLETED", "assignee": "6", "finishDate": "2023-02-23", "client": 3},
+  {"title": "Develop new feature 6", "description": "Develop new feature for the current project according to our client's needs", "dueDate": "2023-02-22","status": "COMPLETED", "assignee": "7", "finishDate": "2023-02-24", "client": 3},
+  {"title": "Team building", "description": "Organise a team building", "dueDate": "2023-02-28","status": "COMPLETED", "assignee": "8", "finishDate": "2023-02-28"}
+]

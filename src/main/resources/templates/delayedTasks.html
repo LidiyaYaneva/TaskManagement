@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <th:block th:insert="~{/fragments/head}"/>
+    <title>Employees</title>
+</head>
+<body>
+
+<th:block th:insert="~{/fragments/header}"/>
+
+<main>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-4">
+                <th:block th:insert="~{/fragments/statistics-nav}"/>
+            </div>
+            <div class="col-6">
+                <h6>Tasks completed after due date: <span th:text="${tasksDelayed.size()}"></span></h6>
+                <table class="table table-bordered table-sm mt-2">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Client</th>
+                        <th>Due Date</th>
+                        <th>Finish Date</th>
+                        <th>Days Delayed</th>
+
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="t : ${tasksDelayed}" th:field="${t}" >
+
+                        <td th:text="${t.id}"></td>
+                        <td th:text="${t.title}"></td>
+                        <td th:text="${t.clientName}"></td>
+                        <td th:text="${t.dueDate}"></td>
+                        <td th:text="${t.finishDate}"></td>
+                        <td th:text="${t.daysDelayed}"></td>
+
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</main>
+
+<th:block th:insert="~{/fragments/footer}"/>
+
+
+</body>
+</html>
