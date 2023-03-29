@@ -18,9 +18,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.time.Month;
 import java.time.Period;
-import java.time.temporal.TemporalAdjusters;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -106,24 +104,10 @@ public class TaskServiceImpl implements TaskService {
 
     public List<Task> getTasksFinishedPastMonth() {
 
-        int currentDayOfMonth = LocalDate.now().getDayOfMonth();
+        LocalDate currentDate = LocalDate.now().minusDays(1);
+        LocalDate pastDate = currentDate.minusMonths(1);
 
-        Month currentMonth = LocalDate.now().getMonth();
-        Month pastMonth = currentMonth.minus(1L);
-
-        int year = LocalDate.now().getYear();
-        if (pastMonth.equals(Month.DECEMBER)) {
-            year = year - 1;
-        }
-
-        int start = currentDayOfMonth;
-        LocalDate lastDayOfPreviousMonth = LocalDate.of(year, pastMonth, 1).with(TemporalAdjusters.lastDayOfMonth());
-        if (currentDayOfMonth > lastDayOfPreviousMonth.getDayOfMonth()) {
-            start = lastDayOfPreviousMonth.getDayOfMonth();
-        }
-        LocalDate bottomDate = LocalDate.of(year, pastMonth, start);
-        LocalDate topDate = LocalDate.of(year, currentMonth, currentDayOfMonth).minusDays(1L);
-        return this.taskRepository.findAllFinishedPastMonth(bottomDate, topDate);
+        return this.taskRepository.findAllFinishedPastMonth(pastDate, currentDate);
     }
 
     @Override

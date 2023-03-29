@@ -14,6 +14,8 @@ public class SeedEmployeeDTO {
 
     private BigDecimal monthlySalary;
 
+    private Long department;
+
     public SeedEmployeeDTO() {
     }
 
@@ -65,5 +67,13 @@ public class SeedEmployeeDTO {
 
     public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public Long getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Long department) {
+        this.department = department;
     }
 }

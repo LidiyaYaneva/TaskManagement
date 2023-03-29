@@ -4,10 +4,12 @@ import com.google.gson.Gson;
 import com.primeholding.taskmanagement.models.dtos.SeedEmployeeDTO;
 import com.primeholding.taskmanagement.models.dtos.SeedTaskDTO;
 import com.primeholding.taskmanagement.models.entities.ClientEntity;
+import com.primeholding.taskmanagement.models.entities.Department;
 import com.primeholding.taskmanagement.models.entities.Employee;
 import com.primeholding.taskmanagement.models.entities.Task;
 import com.primeholding.taskmanagement.models.enums.TaskStatus;
 import com.primeholding.taskmanagement.repositories.ClientRepository;
+import com.primeholding.taskmanagement.repositories.DepartmentRepository;
 import com.primeholding.taskmanagement.repositories.EmployeeRepository;
 import com.primeholding.taskmanagement.repositories.TaskRepository;
 import com.primeholding.taskmanagement.services.SeedService;
@@ -31,15 +33,18 @@ public class SeedServiceImpl implements SeedService {
 
     private final ClientRepository clientRepository;
 
+    private final DepartmentRepository departmentRepository;
+
     private final Gson gson;
 
     private final ModelMapper modelMapper;
 
     @Autowired
-    public SeedServiceImpl(EmployeeRepository employeeRepository, TaskRepository taskRepository, ClientRepository clientRepository, Gson gson, ModelMapper modelMapper) {
+    public SeedServiceImpl(EmployeeRepository employeeRepository, TaskRepository taskRepository, ClientRepository clientRepository, DepartmentRepository departmentRepository, Gson gson, ModelMapper modelMapper) {
         this.employeeRepository = employeeRepository;
         this.taskRepository = taskRepository;
         this.clientRepository = clientRepository;
+        this.departmentRepository = departmentRepository;
         this.gson = gson;
         this.modelMapper = modelMapper;
     }
@@ -77,6 +82,8 @@ public class SeedServiceImpl implements SeedService {
 
         for (SeedEmployeeDTO dto : seedEmployeeDTO) {
             Employee employee = this.modelMapper.map(dto, Employee.class);
+            Optional<Department> department = this.departmentRepository.findById(dto.getDepartment());
+            department.ifPresent(employee::setDepartment);
             employees.add(employee);
         }
         this.employeeRepository.saveAll(employees);

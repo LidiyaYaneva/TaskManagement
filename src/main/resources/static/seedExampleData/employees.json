@@ -1,11 +1,11 @@
 [
-  {"fullName": "Lidiya Nikolaeva Yaneva", "email" : "lidiya.yanev@gmail.com", "phoneNumber": "0883322346", "dateOfBirth": "1990-05-03", "monthlySalary": "800.00"},
-  {"fullName": "Ivan Ivanov Ivanov", "email" : "i.ivanov@example.com", "phoneNumber": "0888888888", "dateOfBirth": "2000-01-01", "monthlySalary": "800.00"},
-  {"fullName": "Radoslav Krasimirov Vasilev", "email" : "r.vasilev@example.com", "phoneNumber": "0889999999", "dateOfBirth": "1990-09-01", "monthlySalary": "2300.00"},
-  {"fullName": "Maria Borisova Todorova", "email" : "m.todorova@example.com", "phoneNumber": "0887777777", "dateOfBirth": "1995-11-02", "monthlySalary": "2400.00"},
-  {"fullName": "Gergana Kirilova Ivanova", "email" : "g.ivanova@example.com", "phoneNumber": "0888877665", "dateOfBirth": "1998-12-05", "monthlySalary": "2000.00"},
-  {"fullName": "Petar  Petrov Petrov", "email" : "p.petrov@example.com", "phoneNumber": "0888877665", "dateOfBirth": "1999-05-06", "monthlySalary": "1500.00"},
-  {"fullName": "Georgi Georgiev Georgiev", "email" : "g.georgiev@example.com", "phoneNumber": "0888877665", "dateOfBirth": "1997-07-07", "monthlySalary": "3000.00"},
-  {"fullName": "Vasil Vasilev Vasilev", "email" : "v.vasilev@example.com", "phoneNumber": "0888877665", "dateOfBirth": "1998-08-18", "monthlySalary": "4500.00"}
+  {"fullName": "Lidiya Nikolaeva Yaneva", "email" : "lidiya.yanev@gmail.com", "phoneNumber": "0883322346", "dateOfBirth": "1990-05-03", "monthlySalary": "800.00", "department": "1" },
+  {"fullName": "Ivan Ivanov Ivanov", "email" : "i.ivanov@example.com", "phoneNumber": "0888888888", "dateOfBirth": "2000-01-01", "monthlySalary": "800.00", "department": "1"},
+  {"fullName": "Radoslav Krasimirov Vasilev", "email" : "r.vasilev@example.com", "phoneNumber": "0889999999", "dateOfBirth": "1990-09-01", "monthlySalary": "2300.00", "department": "1"},
+  {"fullName": "Maria Borisova Todorova", "email" : "m.todorova@example.com", "phoneNumber": "0887777777", "dateOfBirth": "1995-11-02", "monthlySalary": "2400.00", "department": "1"},
+  {"fullName": "Gergana Kirilova Ivanova", "email" : "g.ivanova@example.com", "phoneNumber": "0888877665", "dateOfBirth": "1998-12-05", "monthlySalary": "2000.00", "department": "1"},
+  {"fullName": "Petar  Petrov Petrov", "email" : "p.petrov@example.com", "phoneNumber": "0888877665", "dateOfBirth": "1999-05-06", "monthlySalary": "1500.00", "department": "1"},
+  {"fullName": "Georgi Georgiev Georgiev", "email" : "g.georgiev@example.com", "phoneNumber": "0888877665", "dateOfBirth": "1997-07-07", "monthlySalary": "3000.00", "department": "1"},
+  {"fullName": "Vasil Vasilev Vasilev", "email" : "v.vasilev@example.com", "phoneNumber": "0888877665", "dateOfBirth": "1998-08-18", "monthlySalary": "4500.00", "department": "1"}
 
 ]

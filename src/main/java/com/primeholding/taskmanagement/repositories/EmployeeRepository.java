@@ -18,5 +18,12 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
     List<Employee> findAllByFullNameContaining(String inputName);
 
+//    SELECT e.`full_name`, COUNT(t.id) FROM tasks AS t
+//    JOIN employees AS e ON e.id= t.assignee_id
+//    WHERE t.status='COMPLETED' AND t.date_completed BETWEEN '2023-02-22' AND '2023-03-22'
+//    GROUP BY t.assignee_id
+//    ORDER BY COUNT(t.id) DESC
+//    LIMIT 5;
+
 }
 

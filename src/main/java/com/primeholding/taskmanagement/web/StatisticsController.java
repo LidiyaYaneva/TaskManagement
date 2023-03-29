@@ -1,6 +1,7 @@
 package com.primeholding.taskmanagement.web;
 
 import com.primeholding.taskmanagement.models.dtos.*;
+import com.primeholding.taskmanagement.services.DepartmentService;
 import com.primeholding.taskmanagement.services.EmployeeService;
 import com.primeholding.taskmanagement.services.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,10 +20,13 @@ public class StatisticsController {
 
     private final TaskService taskService;
 
+    private final DepartmentService departmentService;
+
     @Autowired
-    public StatisticsController(EmployeeService employeeService, TaskService taskService) {
+    public StatisticsController(EmployeeService employeeService, TaskService taskService, DepartmentService departmentService) {
         this.employeeService = employeeService;
         this.taskService = taskService;
+        this.departmentService = departmentService;
     }
 
     @GetMapping
@@ -64,5 +68,14 @@ public class StatisticsController {
         model.addAttribute("tasksPerClient", tasksPerClient);
         return "tasksPerClient";
     }
+
+    @GetMapping("/productiveDepartments")
+    public String displayProductiveDepartments(Model model) {
+
+        List<DepartmentDTO> productiveDepartments = this.departmentService.getDepartmentTaskCount();
+        model.addAttribute("productiveDepartments", productiveDepartments);
+        return "departments";
+    }
+
 
 }

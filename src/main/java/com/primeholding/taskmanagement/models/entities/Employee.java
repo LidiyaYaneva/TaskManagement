@@ -32,6 +32,10 @@ public class Employee {
     @OneToMany(targetEntity = Task.class, mappedBy = "assignee")
     private Set<Task> tasks;
 
+    @ManyToOne
+    @JoinColumn(name = "department_id", referencedColumnName = "id")
+    private Department department;
+
 
     public Employee() {
         this.tasks = new HashSet<>();
@@ -101,5 +105,13 @@ public class Employee {
 
     public void setTasks(Set<Task> tasks) {
         this.tasks = tasks;
+    }
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 }
